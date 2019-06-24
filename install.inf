@@ -1,0 +1,6 @@
+[info]
+title=Linter for Docker Files, using 'dockerfilelint'
+desc=Linter for CudaLint, adds support for Docker lexer, using 'dockerfilelint'
+type=cudatext-plugin
+subdir=cuda_lint_dockerfilelint
+homepage=https://github.com/medvosa/cuda_lint_dockerfilelint
