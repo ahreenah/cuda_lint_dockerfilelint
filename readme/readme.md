@@ -1,9 +1,9 @@
 Linter for CudaLint plugin.
-It adds support for Docker lexer.
+It adds support for Dockerfile lexer.
 It uses "dockerfilelint".
 
 'dockerfilelint' must be in your system PATH.
-$ npm install -g dockerfilelint@">=1.4.0"
+$ sudo npm install -g dockerfilelint
 
 Author: Medvosa
 

@@ -1,4 +1,4 @@
-"""This module exports the Perl -c util."""
+"""This module exports the dockerfilelint --lint util."""
 
 from cuda_lint import Linter, util
 from cudatext import * 
@@ -6,18 +6,14 @@ from cudatext import *
 
 class Dockerfilelint(Linter):
 
-    """Provides an interface to dockerfilelint"""
+    """Provides an interface to dockerfilelint --lint"""
     cmd = None
-    executable = 'dockerfilelint --json'
+    executable = 'dockerfilelint'
     multiline = False
     syntax = ('Dockerfile')
-    regex = (
-        r'^.+?:(?P<line>\d+):'
-        r'(?:(?P<error>Possible Bug|Deprecation|)|(?P<warning>Optimization|Clarity|)):'
-        r'(?P<message>.+)$\r?\n'
-    )
-    base_cmd = ('')
-    tempfile_suffix = 'erl'
+    regex = r'.*"line":"(?P<line>\d+)",.*"content":"(?P<error>.*)",.*"title":"(?P<message>.+)",'
+    base_cmd = (' --json ')
+    tempfile_suffix = 'dockerfile'
     error_stream = util.STREAM_STDOUT
     word_re = r'^(".*?"|[-\w]+)'
 
