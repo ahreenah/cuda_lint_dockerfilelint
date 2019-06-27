@@ -1,8 +1,6 @@
 """This module exports the dockerfilelint --lint util."""
 
 from cuda_lint import Linter, util
-from cudatext import * 
-
 
 class Dockerfilelint(Linter):
 
@@ -19,8 +17,6 @@ class Dockerfilelint(Linter):
 
 
     def split_match(self, match):
-        print('plit_match')
-        print(match)
    
         """Return the components of the error."""
         split_match = super(Dockerfilelint, self).split_match(match)
@@ -31,7 +27,6 @@ class Dockerfilelint(Linter):
 
 
     def cmd(self):
-        print('cmd')
         """Return the command line to execute."""
         result = self.executable + ' ' + self.base_cmd
 
